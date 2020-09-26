@@ -20,7 +20,7 @@ then
 
     address=$(grep Found /tmp/key | cut -d ':' -f 2 )
     echo $address > /web/hostname
-    mkdir /web
+    mkdir -p /web
     echo '* Generating site.conf'
 
     echo 'server {' > /web/site.conf
@@ -42,7 +42,7 @@ then
     echo '  }' >> /web/site.conf
     echo '}' >> /web/site.conf
 
-    chmod 755 /web
+    chmod 700 /web
 
 fi
 
