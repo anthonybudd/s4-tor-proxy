@@ -19,9 +19,8 @@ then
     fi
 
     address=$(grep Found /tmp/key | cut -d ':' -f 2 )
-
     echo $address > /web/hostname
-    
+    mkdir /web
     echo '* Generating site.conf'
 
     echo 'server {' > /web/site.conf
@@ -42,6 +41,8 @@ then
     echo '    chunked_transfer_encoding off;' >> /web/site.conf
     echo '  }' >> /web/site.conf
     echo '}' >> /web/site.conf
+
+    chmod 755 /web
 
 fi
 
