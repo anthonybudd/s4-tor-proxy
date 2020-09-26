@@ -20,7 +20,6 @@ then
 
     address=$(grep Found /tmp/key | cut -d ':' -f 2 )
     echo $address > /web/hostname
-    mkdir -p /web
     echo '* Generating site.conf'
 
     echo 'server {' > /web/site.conf
